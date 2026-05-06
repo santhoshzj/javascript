@@ -1,0 +1,127 @@
+/* calculator.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1d2671, #c33764);
+}
+
+/* Main Calculator Container */
+div {
+    width: 450px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 45px;
+    border-radius: 25px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Calculator Heading */
+h1 {
+    font-size: 42px;
+    color: #222;
+    margin-bottom: 35px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 18px;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    font-size: 20px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Input Focus Effect */
+input:focus {
+    border-color: #1d2671;
+    box-shadow: 0 0 10px rgba(29, 38, 113, 0.3);
+}
+
+/* Result Box */
+#result {
+    background: #f4f4f4;
+    font-weight: bold;
+    color: #111;
+}
+
+/* Buttons */
+button {
+    width: 48%;
+    height: 55px;
+    margin: 8px 1%;
+    border: none;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+/* Add Button */
+button:nth-of-type(1) {
+    background: #28a745;
+}
+
+/* Sub Button */
+button:nth-of-type(2) {
+    background: #dc3545;
+}
+
+/* Multiply Button */
+button:nth-of-type(3) {
+    background: #ffc107;
+    color: black;
+}
+
+/* Divide Button */
+button:nth-of-type(4) {
+    background: #007bff;
+}
+
+/* Hover Effect */
+button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Responsive */
+@media (max-width: 500px) {
+    div {
+        width: 90%;
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    input {
+        height: 55px;
+        font-size: 18px;
+    }
+
+    button {
+        width: 100%;
+        margin: 8px 0;
+        height: 50px;
+    }
+}
