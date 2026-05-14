@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SK Cinemas - Login</title>
+    <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="homepage1.html"><img src="logo.png" alt="SK Cinemas Logo">SK Cinemas</a>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="movies.html">Movies</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search for movies...">
+            <button type="submit">Search</button>
+        </div>
+        <div class="login">
+            <a href="#" id="login-link">Login</a>
+        </div>
+    </header>
+
+    <footer>
+        <p>&copy; 2026 SK Cinemas. All rights reserved.</p>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1>Login to SK Cinemas</h1>
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="modal-email">Email or Username</label>
+                    <input type="text" id="modal-email" name="email" required placeholder="Enter your email or username">
+                </div>
+                <div class="form-group">
+                    <label for="modal-password">Password</label>
+                    <input type="password" id="modal-password" name="password" required placeholder="Enter your password">
+                </div>
+                <div class="form-options">
+                    <label>
+                        <input type="checkbox" name="remember"> Remember me
+                    </label>
+                    <a href="forgot-password.html">Forgot Password?</a>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+            <div class="login-links">
+                <p>Don't have an account? <a href="register.html">Register here</a></p>
+                <p>Or login with:</p>
+                <div class="social-login">
+                    <button class="social-btn google">Google</button>
+                    <button class="social-btn facebook">Facebook</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal functionality
+        const modal = document.getElementById('login-modal');
+        const loginLink = document.getElementById('login-link');
+        const closeBtn = document.querySelector('.close');
+
+        // Auto-show modal on page load since this is the login page
+        window.addEventListener('load', function() {
+            modal.style.display = 'block';
+        });
+
+        loginLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            modal.style.display = 'block';
+        });
+
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Form submission
+        document.querySelector('.login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('modal-email').value;
+            const password = document.getElementById('modal-password').value;
+
+            // Simple validation
+            if (email && password) {
+                // Simulate login process
+                alert('Login successful! Redirecting to dashboard...');
+                // In a real app, this would redirect to user dashboard
+                window.location.href = 'homepage1.html';
+            } else {
+                alert('Please enter both email and password.');
+            }
+        });
+    </script>
+
+</body>
+</html>
